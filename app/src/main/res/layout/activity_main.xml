@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!--<FrameLayout
+        android:id="@+id/frame_container"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:background="@color/white"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />-->
+
+    <hr.miz.evidencijakontakata.CustomViews.LayoutPager
+        android:id="@+id/lpOrders"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <FrameLayout
+            android:id="@+id/llPage01"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <FrameLayout
+            android:id="@+id/llPage02"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </hr.miz.evidencijakontakata.CustomViews.LayoutPager>
+
+    <hr.miz.evidencijakontakata.CustomViews.IconlessBottomNavBar
+        android:background="@color/bottom_nav_background"
+        android:foreground="?attr/selectableItemBackground"
+        android:id="@+id/navigation"
+        android:layout_gravity="bottom"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        app:itemBackground="@color/bottom_nav_background"
+        app:layout_anchorGravity="center_vertical"
+        app:labelVisibilityMode="labeled"
+        app:itemTextColor="@color/bottom_nav_color" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

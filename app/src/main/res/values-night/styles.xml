@@ -1,0 +1,33 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="android:windowDisablePreview">true</item>
+    </style>
+
+    <style name="RobotoBold" parent="@android:style/TextAppearance">
+        <item name="fontPath">fonts/roboto_bold.ttf</item>
+    </style>
+
+    <style name="RobotoRegular" parent="@android:style/TextAppearance">
+        <item name="fontPath">fonts/roboto_regular.ttf</item>
+    </style>
+
+    <style name="MySwitch" parent="Theme.AppCompat.Light">
+        <!-- active thumb & track color (30% transparency) -->
+        <item name="colorControlActivated">@color/bg_grey</item>
+
+        <!-- inactive thumb color -->
+        <item name="colorSwitchThumbNormal">@color/grey_dark</item>
+
+        <!-- inactive track color (30% transparency) -->
+        <item name="android:colorForeground">@color/red_color</item>
+    </style>
+</resources>

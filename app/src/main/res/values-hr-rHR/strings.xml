@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="terms_url">https://stopcovid19.zdravlje.hr/html/uvjeti-koristenja.html</string>
+    <string name="privacy_url">https://stopcovid19.zdravlje.hr/html/pravila-privatnosti.html</string>
+    <string name="accessibility_url">https://stopcovid19.zdravlje.hr/html/izjava-pristupacnosti.html</string>
+    <string name="license_url">https://stopcovid19.zdravlje.hr/html/komponente.html</string>
+
+    <string name="exposures">Izloženosti</string>
+    <string name="notify_others">Obavijesti druge</string>
+    <string name="possible_exposure">Moguća izloženost</string>
+    <string name="no_exposures">Nema izloženost</string>
+    <string name="share_test_result_title">Podijelite informaciju da ste zaraženi</string>
+    <string name="share_test_result_description">Podjelom informacije da ste zaraženi i slanjem svojih ključeva pomoći ćete ostalima koji su možda bili izloženi.</string>
+    <string name="share_test_result">Podijelite s drugima</string>
+    <string name="positive_test_results">Pozitivni nalazi</string>
+    <string name="no_positive_test_results">Nema pozitivnih nalaza</string>
+    <string name="enter_your_test_identifier">UPIŠITE KOD</string>
+    <string name="share_test_identifier_help">Upišite kod koji ste dobili nakon pozitivnog testiranja na COVID-19 kako bi obavijestili druge.</string>
+    <string name="btn_next">Potvrdi</string>
+    <string name="btn_cancel">Odustani</string>
+    <string name="test_date_label">Unesi datum testiranja</string>
+    <string name="share_test_date_help">Datum testiranja pomaže aplikaciji u prepoznavanju kada ste potencijalno bili zarazni.</string>
+    <string name="contact_tracing_title">Stop COVID-19</string>
+    <string name="no_internet_connection">Nema internet konekcije</string>
+    <string name="exposure_notification_dialog_title">Želite uključiti obavijesti o\nizloženosti Covidu-19?</string>
+    <string name="exposure_notification_dialog_description">Vaš mobilni uređaj mora koristiti Bluetooth kako bi sigurno mogao prikupljati i dijeliti nasumične ključeve s drugim mobilnim uređajima koji su u blizini.\n\nStop COVID-19 Vas može obavijestiti ako ste bili u blizini nekoga tko je poslao informaciju o svojem pozitivnom nalazu kroz aplikaciju.\n\nDatum, trajanje i jačina signala koja je zabilježena u trenutku ostvarivanja kontakta podijelit će se s aplikacijom.</string>
+    <string name="turn_on">Uključi</string>
+    <string name="cancel">Odustani</string>
+    <string name="app_info_title">Obavijesti o izloženosti Covidu-19</string>
+    <string name="service_toggle_info">Možete odlučiti ugasiti obavijesti u bilo kojem trenutku.</string>
+    <string name="app_info">Aplikacijske obavijesti dizajnirane su na način da Vas obavijeste ako ste bili izloženi drugom korisniku aplikacije koji naknadno prijavi pozitivni laboratorijski nalaz kroz aplikaciju.\n\nObavijesti o izloženosti oslanjaju se na dijeljenje i prikupljanje nasumičnih identifikatora. Identifikatori su niz brojeva koji Vas ne identificiraju prema drugim korisnicima i mijenjaju se više puta dnevno kako bi zaštitili Vašu privatnost.</string>
+    <string name="proceed">Dalje</string>
+    <string name="next_steps_high_risk"><![CDATA[<b>Sljedeći koraci:</b><br/><br/>Obzirom na bliski kontakt i razinu rizika preporuča se da sami napravite Iaboratorijski nalaz na COVID-19.<br/><br/>Ovdje možete pronaći popis mjesta gdje možete napraviti testiranje.]]></string>
+    <string name="next_steps_low_risk"><![CDATA[<b>Sljedeći koraci:</b><br/><br/>Redovito pratite simptome i mjerite tjelesnu temperaturu.<br/>Preporuča se samoizolacija u trajanju od 14 dana radi sigurnosti drugih oko vas.]]></string>
+    <string name="exposure_info"><![CDATA[%s bili ste u blizini osobe koja je prijavila pozitivan test na COVID-19.]]></string>
+    <string name="exposure_info_title">Moguća izloženost</string>
+    <string name="share_title">Podijeli svoje nasumično dodijeljene identifikatore s aplikacijom „Stop COVID-19“?</string>
+    <string name="share_message">Vaši nasumični identifikatori u posljednjih 14 dana iskoristit će se kako bi pomogli obavijestiti ostale osobe s kojima ste bili u kontaktu o mogućoj izloženosti Covidu-19.\n\nS drugima će se podijeliti dan i vrijeme ostvarenog kontakta, dok Vaš identitet neće biti podijeljen s drugim osobama.</string>
+    <string name="share_button">Podijeli</string>
+    <string name="privacy_title">Kako rade obavijesti o izloženosti na COVID-19?</string>
+    <string name="privacy_message">Aplikacijske obavijesti dizajnirane su na način da Vas obavijeste ako ste bili izloženi drugom korisniku aplikacije koji naknadno prijavi svoj pozitivni laboratorijski nalaz kroz aplikaciju.\n\nMožete odlučiti ugasiti obavijesti u bilo kojem trenutku.\n\nObavijesti o izloženosti oslanjaju se na dijeljenje i prikupljanje nasumičnih identifikatora. Identifikatori su niz brojeva koji Vas ne identificiraju prema drugim korisnicima i mijenjaju se više puta dnevno kako bi zaštitili Vašu privatnost. </string>
+    <string name="on">Uključeno</string>
+    <string name="off">Isključeno</string>
+    <string name="high_risk_tem">Visoki rizik</string>
+    <string name="low_risk_item">Niski rizik</string>
+    <string name="no_contacts">Aplikacija ne bilježi kontakte s drugim uređajima u blizini.</string>
+    <string name="anonimno">Anonimno i bez spremanja lokacije bilježite kontakte s drugim uređajima u blizini.</string>
+    <string name="exposures_in_past_days">POPIS INFORMACIJA O ZARAZI:</string>
+    <string name="language">Jezik aplikacije:</string>
+    <string name="go">Krenite</string>
+    <string name="done">U redu</string>
+    <string name="who_received_notification">Obavijest će primiti samo osobe koje su bile izložene.</string>
+    <string name="thank_you_for_caring">Hvala što brinete o drugima!</string>
+    <string name="english">English</string>
+    <string name="croatian">Hrvatski</string>
+    <string name="get_started">Započnite</string>
+    <string name="croatian_language">Hrvatski</string>
+    <string name="english_language">Engleski</string>
+    <string name="croatian_language_short">hr</string>
+    <string name="english_language_short">en</string>
+    <string name="exposure_info_upload_successful">Hvala što brinete o drugima.</string>
+    <string name="not_now">Ne sada</string>
+    <string name="please_update_app">Molimo Vas da ažurirate aplikaciju</string>
+    <string name="contact_tracing_credo">Pazimo jedni na druge!</string>
+    <string name="click_here_for_more">Pritisnite ovdje za više informacija</string>
+    <string name="confirm">Potvrdi</string>
+    <string name="potvrda_nalaza">Slanje ključeva</string>
+    <string name="day">dan</string>
+    <string name="days">dana</string>
+    <string name="error">Greška</string>
+    <string name="close">Zatvoriti</string>
+
+    <string name="high_risk">Visok rizik zaraze</string>
+    <string name="medium_risk">Srednji rizik zaraze</string>
+    <string name="low_risk">Nizak rizik zaraze</string>
+
+    <string name="high_risk_short">Bili ste u bliskom visokorizičnom kontaktu sa zaraženom osobom.</string>
+    <string name="medium_risk_short">Bili ste u rizičnom kontaktu sa zaraženom osobom.</string>
+    <string name="low_risk_short">Bili ste u kontaktu sa zaraženom osobom.</string>
+
+    <string name="high_risk_long">Ostanite kod kuće i nazovite svog liječnika koji će Vam dati daljnje upute. Recite mu da koristite ovu aplikaciju.</string>
+    <string name="medium_risk_long">Pratite svoje simptome naredna dva tjedna putem aplikacije Andrija. Nosite masku prilikom  izlaska iz kuće i izbjegavajte kontakte sa starijim osobama. Ukoliko razvijete simptome, ostanite kod kuće i nazovite svog liječnika koji će Vam dati daljnje upute. Recite mu da koristite ovu aplikaciju.</string>
+    <string name="low_risk_long">Pratite svoje simptome naredna dva tjedna putem aplikacije Andrija. Nosite masku prilikom  izlaska iz kuće i izbjegavajte kontakte sa starijim osobama. Ukoliko razvijete simptome, ostanite kod kuće i nazovite svog liječnika koji će Vam dati daljnje upute. Recite mu da koristite ovu aplikaciju.</string>
+
+    <string name="privacy_info_title">Vaša privatnost je zaštićena</string>
+    <string name="privacy_first">Aplikacija ne prikuplja Vaše osobne podatke poput imena, prezimena, datuma rođenja, adrese, broja mobitela itd.</string>
+    <string name="privacy_second">Aplikacija ne može identificirati Vas niti osobe s kojima ste bili u kontaktu.</string>
+    <string name="privacy_third">Ne prikupljaju se lokacijski podaci (GPS), niti se prati Vaše kretanje.</string>
+    <string name="privacy_fourth">Podaci koji se spremaju na Vaš uređaj i veza prema poslužitelju su kriptirani.</string>
+    <string name="privacy_fifth">Vaši podaci su pohranjeni na poslužitelju u Republici Hrvatskoj i njima upravlja Ministarstvo zdravstva.</string>
+    <string name="update_message">Dostupna je nova verzija aplikacije. Potrebno je preuzeti novu verziju kako bi mogli koristiti aplikaciju.</string>
+    <string name="upgrade">Google Play</string>
+    <string name="how_app_works">Kako radi aplikacija?</string>
+    <string name="step_one_title">Aplikacija dodjeljuje nasumične ključeve svim mobitelima</string>
+    <string name="step_one_text">Ključevi su nasumičan niz znakova i ne sadrže podatke o Vašem uređaju niti Vama. Izmjenjuju se nekoliko puta svakog sata kako bi Vaša privatnost bila zaštićena.</string>
+    <string name="step_two_title">Mobilni uređaji u blizini razmjenjuju svoje nasumične ključeve</string>
+    <string name="step_two_text">Kada se nađete u blizini drugog korisnika aplikacije, mobiteli razmjenjuju ključeve putem Bluetooth-a. Na taj način aplikacija može pratiti ostvarene kontakte bez mogućnosti da identificira Vas ni osobu s kojom ste bili u kontaktu.</string>
+    <string name="step_three_title">Osobe koje nakon testiranja dobiju pozitivan nalaz mogu odlučiti žele li podijeliti svoje nasumične ključeve</string>
+    <string name="step_three_text">Korisnici koji imaju pozitivan laboratorijski nalaz na poslužitelj mogu poslati svoje nasumične ključeve emitirane u prethodnom razdoblju čime oni postaju dostupni ostalim korisnicima aplikacije. Slanje nasumičnih ključeva ostvaruje se upisivanjem koda koji je za Vas generirao zdravstveni djelatnik nakon što ste dobili pozitivan laboratorijski nalaz na COVID-19.</string>
+    <string name="step_four_title">Svaki mobitel provjerava je li bio u kontaktu s ključevima koji su podijeljeni</string>
+    <string name="step_four_text">Aplikacija povremeno provjerava ključeve koji su podijeljeni s poslužiteljem i uspoređuje ih s ključevima koji su pohranjeni na Vašem mobilnom uređaju. Na taj način aplikacija može odrediti jeste li bili izloženi opasnosti od zaraze.</string>
+    <string name="step_five_title">Korisnik dobiva obavijest ako je aplikacija pronašla podijeljeni ključ na njegovom mobitelu</string>
+    <string name="step_five_text">Ako ste bili u kontaktu s osobom koja je nakon pozitivnog nalaza podijelila svoje ključeve, dobit ćete obavijest i uputu kako postupiti. Za funkcioniranje aplikaciji nije potreban podatak gdje niti s kime je korisnik bio, tako da je Vaša privatnost zaštićena.</string>
+    <string name="find_out_more">Saznajte više:</string>
+    <string name="terms_and_conditions">Uvjeti korištenja</string>
+    <string name="privcy_policy">Pravila privatnosti</string>
+    <string name="accessibility_policy">Izjava o pristupačnosti</string>
+    <string name="license">Programske komponente</string>
+    <string name="internal_api_error">Vaš uređaj nije kompatibilan s Exposure Api</string>
+
+    <string-array
+        name="days_of_week">
+        <item>Nedjelja</item>
+        <item>Ponedjeljak</item>
+        <item>Utorak</item>
+        <item>Srijeda</item>
+        <item>Četvrtak</item>
+        <item>Petak</item>
+        <item>Subota</item>
+    </string-array>
+    <string name="next_steps">Sljedeći koraci</string>
+    <string name="covid_positive">COVID-19 pozitivan</string>
+    <string name="thanks_for_care">Hvala što brinete o drugima!</string>
+    <string name="date_test">Podijeljeno %s</string>
+    <string name="on_message">Aplikacija bilježi kontakte s drugim uređajima u blizini.</string>
+    <string name="off_message">Aplikacija ne bilježi kontakte s drugim uređajima u blizini.</string>
+    <string name="invalid_code">Autorizacijski kod nije ispravan</string>
+    <string name="expired_code">Autorizacijski kod je istekao</string>
+    <string name="test_sharing_list">Popis informacija o zarazi</string>
+    <string name="no_service">Dogodila se pogreška. Molimo pokušajte ponovo kasnije.</string>
+    <string name="invalid_call">Neispravan poziv</string>
+    <string name="ble_requrements">Bluetooth i lokacija moraju biti omogućeni za pravilan rad Exposure api</string>
+    <string name="info">Info</string>
+    <string name="turned_on">Uključena</string>
+</resources>

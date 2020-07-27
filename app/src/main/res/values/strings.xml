@@ -1,0 +1,142 @@
+<resources>
+    <string name="app_name" translatable="false">Stop COVID-19</string>
+
+    <string name="global_url" translatable="false">https://en.apis-it.hr/</string>
+    <string name="global_url_test" translatable="false">https://en.apis-it.hr/</string>
+    <string name="file_provider_authority" translatable="false">hr.miz.evidencijakontakata.fileprovider</string>
+    <string name="ExposureAppPrefFile" translatable="false">ExposureAppPrefFile</string>
+    <string name="google_play_link" translatable="false">https://play.google.com/store/apps/details?id=hr.miz.evidencijakontakata</string>
+    <bool name="is_production">true</bool>
+
+    <string name="terms_url">https://stopcovid19.zdravlje.hr/html/terms.html</string>
+    <string name="privacy_url">https://stopcovid19.zdravlje.hr/html/privacy-policy.html</string>
+    <string name="accessibility_url">https://stopcovid19.zdravlje.hr/html/accessibility-policy.html</string>
+    <string name="license_url">https://stopcovid19.zdravlje.hr/html/components.html</string>
+
+    <string name="exposures">Exposures</string>
+    <string name="notify_others">Notify others</string>
+    <string name="possible_exposure">Possible exposure</string>
+    <string name="no_exposures">No exposure</string>
+    <string name="share_test_result_title">Share the information that you are infected</string>
+    <string name="share_test_result_description">Sharing information that you are infected and sending your keys will help others who may have been exposed.</string>
+    <string name="share_test_result">Share with others</string>
+    <string name="positive_test_results">Positive test results</string>
+    <string name="no_positive_test_results">No positive test results</string>
+    <string name="enter_your_test_identifier">ENTER CODE</string>
+    <string name="share_test_identifier_help">Enter the code you received after a positive COVID-19 test to inform others.</string>
+    <string name="btn_next">Confirm</string>
+    <string name="btn_cancel">Cancel</string>
+    <string name="test_date_label">Date of test</string>
+    <string name="share_test_date_help">The date helps application determine the time period during which you were contagious.</string>
+    <string name="contact_tracing_title">Stop COVID-19</string>
+    <string name="no_internet_connection">No Internet connection available</string>
+    <string name="exposure_notification_dialog_title">Turn on COVID-19\nExposure Notifications</string>
+    <string name="exposure_notification_dialog_description">Your phone needs to use Bluetooth to securely record and share randomly generated reference codes with other devices in close proximity.\n\nStop COVID-19 can notify you if you have been in proximity to persons who subsequently report to have been tested positive for Covid-19.\n\nThe date, duration, and signal strength associated with an exposure will be shared with the app.</string>
+    <string name="turn_on">Turn on</string>
+    <string name="cancel">Cancel</string>
+    <string name="app_info_title">Exposure notices to COVID-19</string>
+    <string name="service_toggle_info">You can choose to turn off these notifications at any time.</string>
+    <string name="app_info">Application notifications are designed to warn you if you have been exposed to users who subsequently report as testing positive for Covid-19.\n\nExposure notifications rely on the sharing and collecting of randomly generated reference codes. These codes are arbitrary strings of numbers that will not identify you to other users. They are frequently changed during the day in order to protect your privacy.</string>
+    <string name="proceed">Continue</string>
+    <string name="next_steps_high_risk"><![CDATA[<b>Next steps:</b><br/><br/>Given the close contact and the level of risk, it is recommended that you make a Laboratory Finding on COVID-19 yourself.<br/><br/>Here you can find a list of places where you can do testing.]]></string>
+    <string name="next_steps_low_risk"><![CDATA[<b>Next steps:</b><br/><br/>Monitor symptoms regularly and measure body temperature.<br/>Self-isolation for 14 days is recommended for the safety of others around you.]]></string>
+    <string name="exposure_info"><![CDATA[%s you were in proximity to a person who shared their positive Covid-19 test result.]]></string>
+    <string name="exposure_info_title">Possible exposure</string>
+    <string name="share_title">Share your randomly assigned identifiers with the "Stop COVID-19" application?</string>
+    <string name="share_message">Your randomly generated codes from the past 14 days will be used to notify other app users you have come in contact with about possible exposure to Covid-19.\n\nThe date and time of your contact will be shared with the users that you made contact with, but your identity will not be shared with others.</string>
+    <string name="share_button">Share</string>
+    <string name="privacy_title">How do COVID-19 exposure notifications work?</string>
+    <string name="privacy_message">Application notifications are designed to notify you if you are exposed to another user of the application who subsequently reports his or her positive laboratory findings through the application.\n\nYou can choose to turn off notifications at any time.\n\nExposure notices rely on the sharing and collection of random identifiers. Identifiers are a series of numbers that do not identify you to other users and are changed several times a day to protect your privacy. </string>
+    <string name="on">Turned on</string>
+    <string name="off">Turned off</string>
+    <string name="high_risk_tem">High risk</string>
+    <string name="low_risk_item">Low risk</string>
+    <string name="no_contacts">The application does not record contacts with other devices in the vicinity.</string>
+    <string name="anonimno">Keep in touch with other devices nearby anonymously and without saving your location.</string>
+    <string name="exposures_in_past_days">LIST OF INFECTIONS</string>
+    <string name="language">Language:</string>
+    <string name="go">Get started</string>
+    <string name="done">Done</string>
+    <string name="who_received_notification">The notification will be received only by the persons who have been exposed.</string>
+    <string name="thank_you_for_caring">Thank you for caring for others!</string>
+    <string name="english">English</string>
+    <string name="croatian">Hrvatski</string>
+    <string name="get_started">Get started</string>
+    <string name="croatian_language">Croatian</string>
+    <string name="english_language">English</string>
+    <string name="croatian_language_short">hr</string>
+    <string name="english_language_short">en</string>
+    <string name="exposure_info_upload_successful">Thank you for caring for others.</string>
+    <string name="not_now">Not now</string>
+    <string name="please_update_app">Please update your application</string>
+    <string name="contact_tracing_credo">Take care of yourself and others!</string>
+    <string name="click_here_for_more">Click here more info</string>
+    <string name="confirm">Confirm</string>
+    <string name="potvrda_nalaza">Share keys</string>
+    <string name="day">day</string>
+    <string name="days">days</string>
+    <string name="error">Error</string>
+    <string name="close">Close</string>
+
+    <string name="high_risk">High risk of infection</string>
+    <string name="medium_risk">Medium risk of infection</string>
+    <string name="low_risk">Low Risk of infection</string>
+
+    <string name="high_risk_short">You were in a high risk contact with an infected person.</string>
+    <string name="medium_risk_short">You were in medium risk contact with an infected person.</string>
+    <string name="low_risk_short">You were in contact with an infected person. </string>
+
+    <string name="high_risk_long">Stay at home and call your doctor, he will give you further instructions. Tell him that you have this application installed.</string>
+    <string name="medium_risk_long">Check your symptoms regularly during the next two weeks using the application Andrija. Wear a mask when leaving your home and avoid contact with the elderly. If you develop symptoms, stay at home and call your doctor who will give you further instructions. Tell him you have this application installed.</string>
+    <string name="low_risk_long">Check your symptoms regularly during the next two weeks using the application Andrija. Wear a mask when leaving your home and avoid contact with the elderly. If you develop symptoms, stay at home and call your doctor who will give you further instructions. Tell him you have this application installed.</string>
+
+    <string name="privacy_info_title">Your privacy is safe</string>
+    <string name="privacy_first">The app does not collect your personal data, like your name, surname, date of birth, address, telephone number etc.</string>
+    <string name="privacy_second">The app cannot identify you or the people you have been in contact with.</string>
+    <string name="privacy_third">There is no collection of geolocation data (GPS), your movement is not tracked.</string>
+    <string name="privacy_fourth">The data saved on your device and the connections to the server are encrypted.</string>
+    <string name="privacy_fifth">Your data are saved on the servers in the Republic of Croatia and are controlled by the Ministry of Health.</string>
+    <string name="update_message">New version of the application is available. The new version needs to be downloaded in order to use the application.</string>
+    <string name="upgrade">Google Play</string>
+    <string name="how_app_works">How the app works?</string>
+    <string name="step_one_title">The app assigns a randomly generated keys to each device</string>
+    <string name="step_one_text">These keys are a random string of characters and do not contain information about your device or you. They rotate several times every hour to keep your privacy protected.</string>
+    <string name="step_two_title">Devices that come into contact exchange their random keys</string>
+    <string name="step_two_text">When you are near another user of the application, mobile phones exchange keys via Bluetooth. This way, the application can track the contacts made without the ability to identify you or the person you were in contact with.</string>
+    <string name="step_three_title">Users who test positive can choose if they want to share their random keys</string>
+    <string name="step_three_text">Users who have a positive laboratory result can send their random keys broadcasted in the previous period to the server, making them available to other users of the application. Random keys are sent by entering the code generated for users by a healthcare professional after they have received a positive laboratory test on COVID-19.</string>
+    <string name="step_four_title">Each device checks if it has had contact with any of the shared keys</string>
+    <string name="step_four_text">The app periodically checks the keys on the server and compares them to the keys saved on your device. This allows the app to determine if you have been exposed to a potential infection risk.</string>
+    <string name="step_five_title">User is notified if there is a positive match</string>
+    <string name="step_five_text">If you have been in contact with a user who tested positive and shared their keys, the app will send you notification and instructions what to do next.  The app does not need or use information where or with whom you came into contact.</string>
+    <string name="find_out_more">Find out more:</string>
+    <string name="terms_and_conditions">Terms of Use</string>
+    <string name="privcy_policy">Privacy Notice</string>
+    <string name="accessibility_policy">Accessibility Statement</string>
+    <string name="license">Software Components</string>
+    <string name="internal_api_error">Exposure api is not available on this device</string>
+    <string name="next_steps">Next steps</string>
+    <string name="covid_positive">COVID-19 positive</string>
+    <string name="thanks_for_care">Thank you for caring for others!</string>
+    <string name="date_test">Shared on %s</string>
+    <string name="on_message">The application records contacts with other devices in the proximity.</string>
+    <string name="off_message">The application does not record contacts with other devices in the proximity.</string>
+    <string name="invalid_code">Invalid code</string>
+    <string name="expired_code">Expired code</string>
+    <string name="test_sharing_list">List of infections</string>
+    <string name="no_service">An error occurred. Please try again later.</string>
+    <string name="invalid_call">Invalid call</string>
+    <string name="ble_requrements">Bluetooth and location must be enabled for the Exposure api to function properly</string>
+
+    <string-array name="days_of_week">
+        <item>Sunday</item>
+        <item>Monday</item>
+        <item>Tuesday</item>
+        <item>Wednesday</item>
+        <item>Thursday</item>
+        <item>Friday</item>
+        <item>Saturday</item>
+    </string-array>
+    <string name="info">Info</string>
+    <string name="turned_on">Turned on</string>
+</resources>

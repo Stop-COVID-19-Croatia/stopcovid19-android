@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:fillViewport="true">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/ivMz"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="12dp"
+            android:src="@drawable/ministvarstvo_logo_hr" />
+
+        <ImageView
+            android:id="@+id/ivTitle"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_below="@+id/ivMz"
+            android:layout_marginTop="32dp"
+            android:src="@drawable/logo" />
+
+        <TextView
+            android:id="@+id/tvLanguage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ivTitle"
+            android:textColor="@color/black"
+            android:layout_marginTop="32dp"
+            android:gravity="center"
+            android:padding="12dp"
+            android:textAppearance="@style/RobotoRegular"
+            android:text="@string/language"
+            android:textSize="16sp" />
+
+        <RelativeLayout
+            android:id="@+id/rlCroatian"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvLanguage"
+            android:layout_marginLeft="64dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginRight="64dp"
+            android:background="@drawable/button_selected_language"
+            android:orientation="horizontal"
+            android:padding="16sp">
+
+            <ImageView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/icon_hr" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:textAppearance="@style/RobotoBold"
+                android:textColor="@color/black"
+                android:text="@string/croatian_language"
+                android:textSize="16sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rlEnglish"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rlCroatian"
+            android:layout_marginLeft="64dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginRight="64dp"
+            android:background="@drawable/button_language"
+            android:orientation="horizontal"
+            android:padding="16sp">
+
+            <ImageView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/icon_en" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:textAppearance="@style/RobotoBold"
+                android:textColor="@color/black"
+                android:text="@string/english_language"
+                android:textSize="16sp" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/llStart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rlEnglish"
+            android:layout_marginLeft="64dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginRight="64dp"
+            android:background="@drawable/button_green"
+            android:padding="16sp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textAppearance="@style/RobotoRegular"
+                android:text="@string/go"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+        </LinearLayout>
+    </RelativeLayout>
+</ScrollView>

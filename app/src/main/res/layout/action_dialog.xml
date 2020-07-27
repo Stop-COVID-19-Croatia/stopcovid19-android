@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@color/bg_grey"
+    android:layout_gravity="center">
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:text="@string/exposure_notification_dialog_title"
+        android:textAppearance="@style/RobotoBold"
+        android:textColor="@color/black_text_color"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/tvDescription"
+        android:layout_width="240dp"
+        android:layout_height="wrap_content"
+        android:lineSpacingExtra="1.5dp"
+        android:padding="16dp"
+        android:text="@string/exposure_notification_dialog_description"
+        android:textAppearance="@style/RobotoRegular"
+        android:gravity="center"
+        android:textColor="@color/black_text_color"
+        android:textSize="14dp" />
+
+    <TextView
+        android:id="@+id/tvAction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16dp"
+        android:padding="8dp"
+        android:layout_gravity="center"
+        android:text="@string/turn_on"
+        android:textColor="@color/color_dark_blue"/>
+
+    <TextView
+        android:id="@+id/tvCancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16dp"
+        android:padding="8dp"
+        android:layout_gravity="center"
+        android:text="@string/cancel"
+        android:layout_marginBottom="8dp"
+        android:textColor="@color/red_color"/>
+
+</LinearLayout>
