@@ -11,9 +11,9 @@ In order to slow down the spread of COVID-19 among population, the Croatian Gove
 ## Repositories
 | Repository  | Description                           |
 | --------------|:-------------------------------|
-| [stopcovid19-android](../../../stop-covid19-android)  | Android app using the Apple/Google exposure notification API. |
-| [stopcovid19-ios](../../../stop-covid19-ios)  | iOS app using the Apple/Google exposure notification API. |
-| [stopcovid19-docs](../../../stop-covid19-docs)  | Documentation for the Apple/Google exposure notification API platform. |
+| [stopcovid19-android](../../../stopcovid19-android)  | Android app using the Apple/Google exposure notification API. |
+| [stopcovid19-ios](../../../stopcovid19-ios)  | iOS app using the Apple/Google exposure notification API. |
+| [stopcovid19-docs](../../../stopcovid19-docs)  | Documentation for the Apple/Google exposure notification API platform. |
 
 
 ## Licensing
