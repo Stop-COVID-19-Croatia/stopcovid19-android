@@ -57,23 +57,20 @@ public class ExposureInfoDialog extends Dialog {
         binding.ivWarning.setImageDrawable(ContextCompat.getDrawable(getContext(), R.drawable.icon_highrisi));
         binding.tvHighRisk.setVisibility(View.VISIBLE);
         binding.tvRecommendation.setBackground(ContextCompat.getDrawable(getContext(), R.drawable.button_grey));
-        //binding.tvRecommendation.setText(Html.fromHtml(getContext().getString(R.string.next_steps_high_risk)));
         binding.tvRecommendation.setText(getContext().getString(R.string.high_risk_long));
-    }
-
-    private void setupLowRisk() {
-        binding.ivWarning.setImageDrawable(ContextCompat.getDrawable(getContext(), R.drawable.icon_risk));
-        binding.tvHighRisk.setVisibility(View.GONE);
-        binding.tvRecommendation.setBackground(ContextCompat.getDrawable(getContext(), R.drawable.button_grey_outline));
-        //binding.tvRecommendation.setText(Html.fromHtml(getContext().getString(R.string.next_steps_low_risk)));
-        binding.tvRecommendation.setText(getContext().getString(R.string.medium_risk_long));
     }
 
     private void setupMediumRisk() {
         binding.ivWarning.setImageDrawable(ContextCompat.getDrawable(getContext(), R.drawable.icon_risk));
         binding.tvHighRisk.setVisibility(View.GONE);
         binding.tvRecommendation.setBackground(ContextCompat.getDrawable(getContext(), R.drawable.button_grey_outline));
-        //binding.tvRecommendation.setText(Html.fromHtml(getContext().getString(R.string.next_steps_low_risk)));
+        binding.tvRecommendation.setText(getContext().getString(R.string.medium_risk_long));
+    }
+
+    private void setupLowRisk() {
+        binding.ivWarning.setImageDrawable(ContextCompat.getDrawable(getContext(), R.drawable.icon_risk));
+        binding.tvHighRisk.setVisibility(View.GONE);
+        binding.tvRecommendation.setBackground(ContextCompat.getDrawable(getContext(), R.drawable.button_grey_outline));
         binding.tvRecommendation.setText(getContext().getString(R.string.low_risk_long));
     }
 

@@ -33,7 +33,7 @@ public class LanguageUtil {
     }
 
     private static void setLocale(Context context, String language) {
-        Locale locale = new Locale(language);
+        Locale locale = new Locale(language, language);
         Configuration config = new Configuration(context.getResources().getConfiguration());
         Locale.setDefault(locale);
         config.setLocale(locale);

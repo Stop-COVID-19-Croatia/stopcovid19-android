@@ -23,21 +23,25 @@ public class ApiClient {
     private static Retrofit retrofit = null;
 
     public static Retrofit getClient() {
-        PersistentCookieJar persistentCookieJar = new PersistentCookieJar(new SetCookieCache(), new SharedPrefsCookiePersistor(CroatiaExposureNotificationApp.getInstance()));
-        ClearableCookieJar cookieJar = persistentCookieJar;
+        if(retrofit == null) {
+            renew();
+        }
+
+        return retrofit;
+    }
+
+    public static void renew() {
+        ClearableCookieJar cookieJar = new PersistentCookieJar(new SetCookieCache(), new SharedPrefsCookiePersistor(CroatiaExposureNotificationApp.getInstance()));
 
         OkHttpClient client = new OkHttpClient.Builder()
                 .cookieJar(cookieJar)
-                .addInterceptor(new Interceptor() {
-                    @Override
-                    public Response intercept(Chain chain) throws IOException {
-                        Request request = chain.request();
-                        Request.Builder builder = request.newBuilder();
+                .addInterceptor(chain -> {
+                    Request request = chain.request();
+                    Request.Builder builder = request.newBuilder();
 
-                        request = builder.build();
-                        Response response = chain.proceed(request);
-                        return response;
-                    }
+                    request = builder.build();
+                    Response response = chain.proceed(request);
+                    return response;
                 })
                 .readTimeout(60, TimeUnit.SECONDS)
                 .connectTimeout(60, TimeUnit.SECONDS)
@@ -48,9 +52,6 @@ public class ApiClient {
                 .addConverterFactory(GsonConverterFactory.create(getCustomGson()))
                 .client(client)
                 .build();
-
-
-        return retrofit;
     }
 
     private static Gson getCustomGson() {

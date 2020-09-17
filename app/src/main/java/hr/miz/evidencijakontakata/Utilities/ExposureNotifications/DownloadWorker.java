@@ -16,9 +16,11 @@ import org.jetbrains.annotations.NotNull;
 import java.util.concurrent.TimeUnit;
 
 import hr.miz.evidencijakontakata.CroatiaExposureNotificationApp;
+import hr.miz.evidencijakontakata.Services.Client.ApiClient;
 
 public class DownloadWorker extends Worker {
-    private static final int WORKER_INTERVAL_DELAY = 24;
+    private static final int WORKER_INTERVAL_DELAY = 4;
+    private static boolean didCheck = false;
 
     static void schedule() {
         Constraints workConstraints = new Constraints.Builder()
@@ -30,6 +32,7 @@ public class DownloadWorker extends Worker {
                 .setInitialDelay(initialDelay, TimeUnit.MINUTES)
                 .build();
         WorkManager.getInstance(CroatiaExposureNotificationApp.getInstance()).enqueueUniquePeriodicWork(DownloadWorker.class.getName(), ExistingPeriodicWorkPolicy.KEEP , downloadWork);
+        forceCheck();
     }
 
     static void cancel() {
@@ -43,7 +46,15 @@ public class DownloadWorker extends Worker {
     @NotNull
     @Override
     public Result doWork() {
+        ApiClient.renew();
         ExposureProvider.initCheck();
         return Result.success();
+    }
+
+    private static void forceCheck() {
+        if (!didCheck) {
+            didCheck = true;
+            ExposureProvider.initCheck();
+        }
     }
 }

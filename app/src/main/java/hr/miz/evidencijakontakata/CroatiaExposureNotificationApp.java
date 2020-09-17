@@ -11,13 +11,12 @@ import android.webkit.WebView;
 import androidx.annotation.StringRes;
 import androidx.appcompat.app.AppCompatDelegate;
 
-import com.crashlytics.android.Crashlytics;
+
 
 import java.util.Locale;
 
 import hr.miz.evidencijakontakata.Utilities.GlobalEnvironment;
 import hr.miz.evidencijakontakata.Utilities.LanguageUtil;
-import io.fabric.sdk.android.Fabric;
 import io.github.inflationx.calligraphy3.CalligraphyConfig;
 import io.github.inflationx.calligraphy3.CalligraphyInterceptor;
 import io.github.inflationx.viewpump.ViewPump;
@@ -39,7 +38,7 @@ public class CroatiaExposureNotificationApp extends Application {
         setupCalligraphy();
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         LanguageUtil.setLanguageInit(this);
-        Fabric.with(this, new Crashlytics());
+
     }
 
     private static void setupGlobalEnvironment() {
@@ -71,7 +70,8 @@ public class CroatiaExposureNotificationApp extends Application {
 
     public static String getStr(@StringRes int stringId) {
         Configuration config = new Configuration(getInstance().getResources().getConfiguration());
-        config.setLocale(new Locale(LanguageUtil.getImageLanguage()));
+        String languageCode = LanguageUtil.getImageLanguage();
+        config.setLocale(new Locale(languageCode, languageCode));
         Resources resources = new Resources(getInstance().getAssets(), Resources.getSystem().getDisplayMetrics(), config);
         return resources.getString(stringId);
     }

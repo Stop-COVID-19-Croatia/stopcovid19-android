@@ -51,10 +51,5 @@ public class HttpUtilities {
         });
     }
 
-    public static void cancelActiveCall() {
-        if (call != null) {
-            call.cancel();
-            call = null;
-        }
-    }
+
 }
