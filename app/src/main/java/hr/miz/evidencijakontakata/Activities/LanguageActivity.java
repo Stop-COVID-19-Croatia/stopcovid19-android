@@ -1,10 +1,8 @@
 package hr.miz.evidencijakontakata.Activities;
 
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
 import com.google.android.gms.common.api.ApiException;
@@ -17,17 +15,11 @@ import hr.miz.evidencijakontakata.R;
 import hr.miz.evidencijakontakata.Utilities.ExposureNotifications.ExposureNotificationWrapper;
 import hr.miz.evidencijakontakata.Utilities.LanguageUtil;
 import hr.miz.evidencijakontakata.databinding.ActivityLanguageBinding;
-import io.github.inflationx.viewpump.ViewPumpContextWrapper;
 
-public class LanguageActivity extends AppCompatActivity {
+public class LanguageActivity extends BaseActivity {
 
-    ActivityLanguageBinding binding;
-    Context context;
-
-    @Override
-    protected void attachBaseContext(Context newBase) {
-        super.attachBaseContext(ViewPumpContextWrapper.wrap(newBase));
-    }
+    private ActivityLanguageBinding binding;
+    private Context context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,13 +28,12 @@ public class LanguageActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
         this.context = this;
         LanguageUtil.setLanguageInit(context);
-
         LanguageUtil.setLanguageFlag(context, true);
-
         setup();
     }
 
     private void setup() {
+
         if (LanguageUtil.getLanguage().equals("hr")){
             binding.ivTitle.setImageDrawable(getDrawable(R.drawable.logo));
             binding.ivMz.setImageDrawable(getDrawable(R.drawable.ministvarstvo_logo_hr));
@@ -71,12 +62,12 @@ public class LanguageActivity extends AppCompatActivity {
         ExposureNotificationWrapper.get().checkEnabled(new IExposureListener() {
             @Override
             public void onStarted() {
-                startMainActivity();
+                startNewActivity(MainActivity.class, null, false);
             }
 
             @Override
             public void onStopped() {
-                startAppInfoActivity();
+                startNewActivity(AppInfoActivity.class, null, false);
             }
 
             @Override
@@ -89,20 +80,6 @@ public class LanguageActivity extends AppCompatActivity {
 
             }
         });
-    }
-
-    private void startAppInfoActivity() {
-        Intent intent = new Intent(LanguageActivity.this, AppInfoActivity.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
-        startActivity(intent);
-        finish();
-    }
-
-    private void startMainActivity() {
-        Intent intent = new Intent(LanguageActivity.this, MainActivity.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
-        startActivity(intent);
-        finish();
     }
 
     private void changeLanguage(String locale) {

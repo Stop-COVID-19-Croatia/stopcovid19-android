@@ -19,7 +19,6 @@ import android.widget.Toast;
 import androidx.annotation.IdRes;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
@@ -40,19 +39,13 @@ import hr.miz.evidencijakontakata.Utilities.ExposureNotifications.ExposureNotifi
 import hr.miz.evidencijakontakata.Utilities.LanguageUtil;
 import hr.miz.evidencijakontakata.Utilities.Util;
 import hr.miz.evidencijakontakata.databinding.ActivityMainBinding;
-import io.github.inflationx.viewpump.ViewPumpContextWrapper;
 
 import static hr.miz.evidencijakontakata.Utilities.Util.getAnimatedFragmentTransaction;
 import static hr.miz.evidencijakontakata.Utilities.Util.isBluetoothOn;
 
-public class MainActivity extends AppCompatActivity implements IExposureListener {
+public class MainActivity extends BaseActivity implements IExposureListener {
     private IExposureStatusChanged exposureListener;
     private ActivityMainBinding binding;
-
-    @Override
-    protected void attachBaseContext(Context newBase) {
-        super.attachBaseContext(ViewPumpContextWrapper.wrap(newBase));
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,8 +60,8 @@ public class MainActivity extends AppCompatActivity implements IExposureListener
     }
 
     private void loadInitialFragment() {
-        loadFragment(new ExposuresFragment(), R.id.llPage01, false);
-        loadFragment(new NotifyOthersFragment(), R.id.llPage02, false);
+        loadFragment(new ExposuresFragment(), R.id.llPage01);
+        loadFragment(new NotifyOthersFragment(), R.id.llPage02);
     }
 
     public void setNavigation() {
@@ -95,9 +88,9 @@ public class MainActivity extends AppCompatActivity implements IExposureListener
         }
     };
 
-    protected void loadFragment(Fragment fragment, @IdRes int containerId, boolean animated) {
+    protected void loadFragment(Fragment fragment, @IdRes int containerId) {
         cleanUpFragments(null);
-        replaceFragment(fragment, containerId, false, animated);
+        replaceFragment(fragment, containerId, false, false);
     }
 
     public void replaceFragment(Fragment fragment, @IdRes int containerId, boolean addToBackStack, boolean animated) {

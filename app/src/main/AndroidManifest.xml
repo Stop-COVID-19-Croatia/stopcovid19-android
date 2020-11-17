@@ -17,7 +17,6 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round_new"
         android:supportsRtl="true"
-        android:largeHeap="true"
         android:theme="@style/AppTheme"
         android:allowBackup="false"
         tools:ignore="LockedOrientationActivity">
@@ -31,12 +30,14 @@
         <activity
             android:name=".Activities.LanguageActivity"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".Activities.PrivacyActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".Activities.AppInfoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activities.FederationSharingActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".Activities.SplashActivity"
@@ -54,6 +55,12 @@
             android:permission="com.google.android.gms.nearby.exposurenotification.EXPOSURE_CALLBACK">
             <intent-filter>
                 <action android:name="com.google.android.gms.exposurenotification.ACTION_EXPOSURE_STATE_UPDATED" />
+            </intent-filter>
+        </receiver>
+
+        <receiver android:name=".Utilities.ExposureNotifications.UpdateReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.MY_PACKAGE_REPLACED"/>
             </intent-filter>
         </receiver>
 

@@ -2,72 +2,33 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/white">
 
-    <TextView
-        android:id="@+id/tvInfo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="right"
-        android:layout_margin="16dp"
-        android:background="@drawable/button_grey"
-        android:paddingLeft="24dp"
-        android:paddingTop="8dp"
-        android:paddingRight="24dp"
-        android:paddingBottom="8dp"
-        android:text="@string/info"
-        android:textAppearance="@style/RobotoRegular"
-        android:textColor="@color/black" />
-
-
-    <LinearLayout
-        android:id="@+id/llLocale"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:padding="12dp"
-        android:background="@drawable/button_grey"
-        android:orientation="horizontal">
-
-        <ImageView
-            android:id="@+id/ivLocale"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:elevation="1dp"
-            android:src="@drawable/icon_hr"
-            android:visibility="gone"/>
-
-        <TextView
-            android:id="@+id/tvLocale"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="@string/croatian_language_short"
-            android:textAllCaps="true"
-            android:textColor="@color/black" />
-
-    </LinearLayout>
-
-    <LinearLayout
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="32dp"
-        android:gravity="center"
-        android:orientation="vertical">
+        android:clipToPadding="false"
+        android:orientation="vertical"
+        android:paddingTop="32dp"
+        android:paddingBottom="64dp">
 
         <RelativeLayout
             android:id="@+id/rlMain"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:layout_margin="24dp">
 
-            <ImageView
+            <com.airbnb.lottie.LottieAnimationView
                 android:id="@+id/ivContacts"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_centerHorizontal="true"
                 android:layout_marginBottom="16dp"
-                android:src="@drawable/icon_contacts" />
+                app:lottie_rawRes="@raw/icon_contacts"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true" />
 
             <TextView
                 android:id="@+id/tvExposure"
@@ -102,42 +63,6 @@
                     android:textSize="16sp"
                     android:visibility="gone" />
 
-                <FrameLayout
-                    android:id="@+id/rlSwitch"
-                    android:layout_width="230dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="32dp"
-                    android:background="@drawable/button_green">
-
-                    <TextView
-                        android:id="@+id/tvOn"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"
-                        android:text="@string/on"
-                        android:textAllCaps="true"
-                        android:layout_margin="16dp"
-                        android:textAppearance="@style/RobotoBold"
-                        android:textColor="@color/white"
-                        android:textSize="14sp" />
-
-                    <com.google.android.material.switchmaterial.SwitchMaterial
-                        android:id="@+id/switchOnOff"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginRight="16dp"
-                        android:layout_gravity="right|center_vertical"
-                        android:checked="true"
-                        android:theme="@style/MySwitch" />
-
-                    <Button
-                        android:id="@+id/btnSwitch"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:alpha="0"/>
-
-                </FrameLayout>
-
                 <TextView
                     android:id="@+id/tvMessage"
                     android:layout_width="wrap_content"
@@ -148,21 +73,59 @@
                     android:textAppearance="@style/RobotoBold"
                     android:textSize="14sp" />
 
+                <FrameLayout
+                    android:id="@+id/rlSwitch"
+                    android:layout_width="230dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/button_green">
+
+                    <TextView
+                        android:id="@+id/tvOn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_margin="16dp"
+                        android:text="@string/on"
+                        android:textAllCaps="true"
+                        android:textAppearance="@style/RobotoBold"
+                        android:textColor="@color/white"
+                        android:textSize="14sp" />
+
+                    <com.google.android.material.switchmaterial.SwitchMaterial
+                        android:id="@+id/switchOnOff"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right|center_vertical"
+                        android:layout_marginRight="16dp"
+                        android:checked="true"
+                        android:theme="@style/MySwitch" />
+
+                    <Button
+                        android:id="@+id/btnSwitch"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:alpha="0" />
+
+                </FrameLayout>
+
                 <LinearLayout
                     android:id="@+id/llWarning"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:visibility="gone"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:visibility="gone">
 
-                    <ImageView
+                    <com.airbnb.lottie.LottieAnimationView
                         android:id="@+id/ivWarning"
                         android:layout_width="128dp"
                         android:layout_height="128dp"
                         android:layout_gravity="center"
                         android:layout_marginTop="8dp"
                         android:padding="16dp"
-                        android:src="@drawable/icon_highrisi" />
+                        app:lottie_rawRes="@raw/icon_highrisi"
+                        app:lottie_autoPlay="true"
+                        app:lottie_loop="true" />
 
                     <TextView
                         android:id="@+id/tvHighRisk"
@@ -173,6 +136,67 @@
                         android:textAppearance="@style/RobotoBold"
                         android:textColor="@color/red_color"
                         android:textSize="12sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/btnCountriesOfInterest"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginRight="16dp"
+                    android:visibility="gone"
+                    android:orientation="vertical">
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1px"
+                        android:layout_marginBottom="8dp"
+                        android:background="@color/grey_dark" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="32dp"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="@string/international_exchange"
+                                android:textAppearance="@style/RobotoRegular"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:id="@+id/tvCountryConsent"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_vertical"
+                                android:paddingLeft="4dp"
+                                android:text="@string/exchange_off"
+                                android:textAppearance="@style/RobotoBold"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+
+                        <ImageView
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:src="@drawable/right_arrow" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1px"
+                        android:layout_marginTop="8dp"
+                        android:background="@color/grey_dark" />
+
                 </LinearLayout>
             </LinearLayout>
 
@@ -191,7 +215,7 @@
                     android:layout_marginTop="16dp"
                     android:background="@drawable/button_black"
                     android:padding="8dp"
-                    android:text="@string/turned_on"
+                    android:text="Uklučena"
                     android:textAppearance="@style/RobotoRegular"
                     android:textColor="@color/white" />
 
@@ -212,6 +236,49 @@
 
         </RelativeLayout>
 
+
+    </androidx.core.widget.NestedScrollView>
+
+    <TextView
+        android:id="@+id/tvInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:layout_margin="16dp"
+        android:background="@drawable/button_grey"
+        android:paddingLeft="24dp"
+        android:paddingTop="8dp"
+        android:paddingRight="24dp"
+        android:paddingBottom="8dp"
+        android:text="Info"
+        android:textAppearance="@style/RobotoRegular"
+        android:textColor="@color/black" />
+
+    <LinearLayout
+        android:id="@+id/llLocale"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:background="@drawable/button_grey"
+        android:orientation="horizontal"
+        android:padding="12dp">
+
+        <ImageView
+            android:id="@+id/ivLocale"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:elevation="1dp"
+            android:src="@drawable/icon_hr"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tvLocale"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/croatian_language_short"
+            android:textAllCaps="true"
+            android:textColor="@color/black" />
 
     </LinearLayout>
 </FrameLayout>

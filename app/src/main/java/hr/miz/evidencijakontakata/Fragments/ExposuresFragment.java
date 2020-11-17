@@ -1,7 +1,5 @@
 package hr.miz.evidencijakontakata.Fragments;
 
-import android.bluetooth.BluetoothAdapter;
-import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -17,10 +15,12 @@ import androidx.recyclerview.widget.GridLayoutManager;
 
 import org.jetbrains.annotations.NotNull;
 
+import hr.miz.evidencijakontakata.Activities.FederationSharingActivity;
 import hr.miz.evidencijakontakata.Activities.MainActivity;
 import hr.miz.evidencijakontakata.Activities.PrivacyActivity;
 import hr.miz.evidencijakontakata.Adapters.ExposureEntityAdapter.ExposureEntityAdapter;
 import hr.miz.evidencijakontakata.Dialogs.ExposureInfoDialog;
+import hr.miz.evidencijakontakata.Models.DiagnosisModel;
 import hr.miz.evidencijakontakata.Models.ExposureSummaryCollection;
 import hr.miz.evidencijakontakata.Models.ExposureSummaryModel;
 import hr.miz.evidencijakontakata.R;
@@ -46,12 +46,13 @@ public class ExposuresFragment extends Fragment implements MainActivity.IExposur
         }
         binding.switchOnOff.setOnCheckedChangeListener(switchOnOfChangeListener);
         binding.tvInfo.setOnClickListener(onInfoClickListener);
+        binding.btnCountriesOfInterest.setOnClickListener(v -> startCountryOfInterestConsent());
         setup();
         setupLocale();
         return binding.getRoot();
     }
 
-    private View.OnClickListener onInfoClickListener = new View.OnClickListener() {
+    private final View.OnClickListener onInfoClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
             Intent intent = new Intent(context, PrivacyActivity.class);
@@ -59,7 +60,12 @@ public class ExposuresFragment extends Fragment implements MainActivity.IExposur
         }
     };
 
-    private CompoundButton.OnCheckedChangeListener switchOnOfChangeListener = (compoundButton, b) -> {
+    private void startCountryOfInterestConsent() {
+        Intent intent = new Intent(context, FederationSharingActivity.class);
+        startActivity(intent);
+    }
+
+    private final CompoundButton.OnCheckedChangeListener switchOnOfChangeListener = (compoundButton, b) -> {
         if (compoundButton.isChecked()) {
             setContactsView();
         } else {
@@ -98,19 +104,22 @@ public class ExposuresFragment extends Fragment implements MainActivity.IExposur
     }
 
     private void setupHighRisk() {
-        binding.ivWarning.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.icon_highrisi));
+        binding.ivWarning.setAnimation(R.raw.icon_highrisi);
+        binding.ivWarning.playAnimation();
         binding.tvHighRisk.setText(R.string.high_risk);
         binding.tvHighRisk.setTextColor(ContextCompat.getColor(context, R.color.red_color));
     }
 
     private void setupMediumRisk() {
-        binding.ivWarning.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.icon_risk));
+        binding.ivWarning.setAnimation(R.raw.icon_risk);
+        binding.ivWarning.playAnimation();
         binding.tvHighRisk.setText(R.string.medium_risk);
         binding.tvHighRisk.setTextColor(ContextCompat.getColor(context, R.color.yellow_text));
     }
 
     private void setupLowRisk() {
-        binding.ivWarning.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.icon_risk));
+        binding.ivWarning.setAnimation(R.raw.icon_risk);
+        binding.ivWarning.playAnimation();
         binding.tvHighRisk.setText(R.string.low_risk);
         binding.tvHighRisk.setTextColor(ContextCompat.getColor(context, R.color.yellow_text));
     }
@@ -135,7 +144,8 @@ public class ExposuresFragment extends Fragment implements MainActivity.IExposur
     }
 
     private void setNoContactsView() {
-        binding.ivContacts.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.icon_nocontacts));
+        binding.ivContacts.setAnimation(R.raw.icon_nocontacts);
+        binding.ivContacts.playAnimation();
         binding.rlSwitch.setBackground(ContextCompat.getDrawable(context, R.drawable.button_grey));
         binding.tvOn.setTextColor(ContextCompat.getColor(context, R.color.grey_text_color));
         binding.tvAnonymous.setText(R.string.no_contacts);
@@ -143,7 +153,8 @@ public class ExposuresFragment extends Fragment implements MainActivity.IExposur
     }
 
     private void setContactsView() {
-        binding.ivContacts.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.icon_contacts));
+        binding.ivContacts.setAnimation(R.raw.icon_contacts);
+        binding.ivContacts.playAnimation();
         binding.rlSwitch.setBackground(ContextCompat.getDrawable(context, R.drawable.button_green));
         binding.tvAnonymous.setText(R.string.anonimno);
         binding.tvOn.setTextColor(ContextCompat.getColor(context, R.color.white));
@@ -166,6 +177,7 @@ public class ExposuresFragment extends Fragment implements MainActivity.IExposur
 
     private void stopExposure() {
         if (activity != null) {
+            binding.btnCountriesOfInterest.setVisibility(View.INVISIBLE);
             activity.stopExposureNotifications();
         }
     }
@@ -176,6 +188,10 @@ public class ExposuresFragment extends Fragment implements MainActivity.IExposur
         binding.tvOn.setText(exposureEnabled ? getString(R.string.on) : getString(R.string.off));
         binding.tvMessage.setText(exposureEnabled ? getString(R.string.on_message) : getString(R.string.off_message));
         binding.rlSwitch.setBackground(ContextCompat.getDrawable(context, exposureEnabled ? R.drawable.button_green : R.drawable.button_grey));
+        binding.btnCountriesOfInterest.setVisibility(exposureEnabled ? View.VISIBLE : binding.btnCountriesOfInterest.getVisibility());
+        boolean internationalExchange = DiagnosisModel.consentToFederation();
+        binding.tvCountryConsent.setText(getString(internationalExchange ? R.string.exchange_on : R.string.exchange_off));
+        binding.tvCountryConsent.setTextColor(ContextCompat.getColor(context, internationalExchange ? R.color.btn_green : R.color.primary_color_red));
     }
 
     @Override
@@ -183,13 +199,4 @@ public class ExposuresFragment extends Fragment implements MainActivity.IExposur
         super.onResume();
         activity.checkExposureEnabled();
     }
-
-    private final BroadcastReceiver mReceiver = new BroadcastReceiver() {
-        public void onReceive (Context context, Intent intent) {
-            String action = intent.getAction();
-            if (BluetoothAdapter.ACTION_STATE_CHANGED.equals(action)) {
-                onExposureStatusChanged(intent.getIntExtra(BluetoothAdapter.EXTRA_STATE, -1) != BluetoothAdapter.STATE_OFF);
-            }
-        }
-    };
 }

@@ -2,6 +2,7 @@
 <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:clipToPadding="false"
     android:fillViewport="true"
     android:background="@color/white"
@@ -12,12 +13,14 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <ImageView
+        <com.airbnb.lottie.LottieAnimationView
             android:layout_width="200dp"
             android:layout_height="200dp"
             android:layout_gravity="center"
             android:layout_marginTop="64dp"
-            android:src="@drawable/icon_mask" />
+            app:lottie_rawRes="@raw/icon_mask"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"/>
 
         <LinearLayout
             android:id="@+id/notify_share_section"

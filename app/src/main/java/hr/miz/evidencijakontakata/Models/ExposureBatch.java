@@ -5,8 +5,11 @@ import androidx.annotation.Nullable;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class ExposureBatch {
+    private static final String ID_REGEX = "([a-z]+[-][0-9]{4}[-][0-9]{2}[-][0-9]{2})";//find this format: <any lowercase word>-<any 4 digit number>-<any 2 digit number>-<any 2 digit number>
     private String batchId;
     private ArrayList<String> urls = new ArrayList<>();
 
@@ -34,7 +37,8 @@ public class ExposureBatch {
 
     public static String idFromUrl(String url) {
         try {
-            return url.substring(url.lastIndexOf('/') + 1, url.lastIndexOf('-'));
+            Matcher matcher = Pattern.compile(ID_REGEX).matcher(url.toLowerCase());
+            return matcher.find() ? matcher.group(1) : "";
         } catch (Exception e) {
             return "";
         }

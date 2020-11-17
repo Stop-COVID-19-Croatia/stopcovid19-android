@@ -47,18 +47,25 @@ public class ActionDialog extends Dialog {
         binding.tvTitle.setText(title);
         binding.tvDescription.setText(description);
         binding.tvAction.setText(actionBtnText);
-        binding.tvAction.setOnClickListener(v -> turnOn());
-        binding.tvCancel.setOnClickListener(v -> dismiss());
+        binding.tvAction.setOnClickListener(v -> okAction());
+        binding.tvCancel.setOnClickListener(v -> cancelAction());
     }
 
-    private void turnOn() {
+    private void okAction() {
         if(listener != null) {
-            listener.onDialogAction();
+            listener.onDialogAction(true);
+        }
+        dismiss();
+    }
+
+    private void cancelAction() {
+        if(listener != null) {
+            listener.onDialogAction(false);
         }
         dismiss();
     }
 
     public interface IExposureActivationDialog {
-        void onDialogAction();
+        void onDialogAction(boolean accept);
     }
 }

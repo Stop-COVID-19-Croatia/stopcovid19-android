@@ -63,7 +63,7 @@ public class StorageUtils {
         return null;
     }
 
-    public static Object getObject(String key, Class classObject) {
+    public static <T> T getObject(String key, Class<T> classObject) {
         try {
             String json = getString(key);
             return new Gson().fromJson(json, classObject);

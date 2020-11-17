@@ -4,16 +4,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
     android:orientation="vertical"
     android:paddingLeft="32dp"
-    android:paddingRight="32dp"
     android:paddingTop="16dp"
-    android:background="@color/white">
+    android:paddingRight="32dp"
+    android:paddingBottom="16dp">
 
     <com.airbnb.lottie.LottieAnimationView
         android:layout_width="128dp"
         android:layout_height="128dp"
         android:layout_gravity="center_horizontal"
+        android:layout_marginTop="36dp"
         app:lottie_rawRes="@raw/icon_security"
         app:lottie_autoPlay="true"
         app:lottie_loop="true" />
@@ -28,12 +30,11 @@
         android:textColor="@color/black_text_color"
         android:textSize="16sp" />
 
-    <androidx.core.widget.NestedScrollView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="32dp"
-        android:paddingBottom="32dp"
-        android:clipToPadding="false">
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:paddingTop="32dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -149,31 +150,6 @@
                     android:textSize="14sp" />
             </LinearLayout>
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1px"
-                android:layout_marginTop="32dp"
-                android:background="@color/bg_grey"
-                android:visibility="gone"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingLeft="16dp"
-                android:paddingRight="16dp"
-                android:text="@string/service_toggle_info"
-                android:textAppearance="@style/RobotoRegular"
-                android:textColor="@color/grey_text_color"
-                android:textSize="12sp"
-                android:visibility="gone"/>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1px"
-                android:layout_marginTop="16dp"
-                android:background="@color/bg_grey"
-                android:visibility="gone"/>
-
             <Button
                 android:id="@+id/btnProceed"
                 android:layout_width="wrap_content"
@@ -186,7 +162,6 @@
                 android:text="@string/proceed"
                 android:textAppearance="@style/RobotoRegular"
                 android:textColor="@color/white_text_color" />
-
         </LinearLayout>
-    </androidx.core.widget.NestedScrollView>
+    </ScrollView>
 </LinearLayout>

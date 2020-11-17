@@ -13,13 +13,8 @@ import hr.miz.evidencijakontakata.Utilities.LanguageUtil;
 import hr.miz.evidencijakontakata.databinding.ActivityUpdateBinding;
 import io.github.inflationx.viewpump.ViewPumpContextWrapper;
 
-public class UpdateActivity extends AppCompatActivity {
+public class UpdateActivity extends BaseActivity {
     private ActivityUpdateBinding binding;
-
-    @Override
-    protected void attachBaseContext(Context newBase) {
-        super.attachBaseContext(ViewPumpContextWrapper.wrap(newBase));
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

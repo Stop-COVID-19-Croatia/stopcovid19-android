@@ -33,4 +33,6 @@
     <color name="red_color">#FF5364</color>
     <color name="red_dark_color">#b83b47</color>
     <color name="yellow_text">#FFC632</color>
+    <color name="dark_grey_background">#3c4043</color>
+    <color name="blue_text">#04a0dd</color>
 </resources>

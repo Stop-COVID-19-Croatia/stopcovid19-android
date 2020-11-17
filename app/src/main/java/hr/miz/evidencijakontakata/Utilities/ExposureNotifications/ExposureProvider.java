@@ -17,29 +17,25 @@ import hr.miz.evidencijakontakata.Services.UserService;
 import hr.miz.evidencijakontakata.Utilities.ZipUtil;
 import okhttp3.ResponseBody;
 
-class ExposureProvider {
+public class ExposureProvider {
     private ExposureBatchCollection batchCollection;
     private Queue<ExposureBatch> batches;
     private ArrayList<File> batchFiles = new ArrayList<>();
-    private boolean downloadAll = false;
-
-    private ExposureProvider() { }
 
     private void downloadAndProvide() {
         UserService.getUrls(new IResponseCallback<ExposureUrlModel>() {
             @Override
             public void onSuccess(ExposureUrlModel response) {
-                batchCollection = new ExposureBatchCollection(response.urlList, downloadAll);
+                batchCollection = new ExposureBatchCollection(response.urlList);
                 batches = batchCollection.getQueue();
                 if(batches.size() > 0) {
                     downloadNextBatch();
                 }
             }
 
+            @SuppressLint("DefaultLocale")
             @Override
-            public void onError(CustomError exception) {
-
-            }
+            public void onError(CustomError exception) { }
         });
     }
 
@@ -82,7 +78,7 @@ class ExposureProvider {
         downloadNextBatch();
     }
 
-    static void initCheck() {
+    public static void initCheck() {
         new ExposureProvider().downloadAndProvide();
     }
 }

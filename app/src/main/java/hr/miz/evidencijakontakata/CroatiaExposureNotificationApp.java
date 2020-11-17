@@ -11,8 +11,6 @@ import android.webkit.WebView;
 import androidx.annotation.StringRes;
 import androidx.appcompat.app.AppCompatDelegate;
 
-
-
 import java.util.Locale;
 
 import hr.miz.evidencijakontakata.Utilities.GlobalEnvironment;
@@ -38,17 +36,11 @@ public class CroatiaExposureNotificationApp extends Application {
         setupCalligraphy();
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         LanguageUtil.setLanguageInit(this);
-
     }
 
     private static void setupGlobalEnvironment() {
         globalEnvironment = new GlobalEnvironment();
-
-        if (isProduction()) {
-            globalEnvironment.globalURL = mInstance.getString(R.string.global_url);
-        } else {
-            globalEnvironment.globalURL = mInstance.getString(R.string.global_url_test);
-        }
+        globalEnvironment.globalURL = mInstance.getString(R.string.global_url);
     }
 
     private void setupCalligraphy() {
@@ -60,18 +52,13 @@ public class CroatiaExposureNotificationApp extends Application {
                                 .build())).build());
     }
 
-    public static boolean isProduction() {
-        return mInstance.getResources().getBoolean(R.bool.is_production);
-    }
-
     public static synchronized Context getInstance() {
         return mInstance;
     }
 
     public static String getStr(@StringRes int stringId) {
         Configuration config = new Configuration(getInstance().getResources().getConfiguration());
-        String languageCode = LanguageUtil.getImageLanguage();
-        config.setLocale(new Locale(languageCode, languageCode));
+        config.setLocale(new Locale(LanguageUtil.getImageLanguage()));
         Resources resources = new Resources(getInstance().getAssets(), Resources.getSystem().getDisplayMetrics(), config);
         return resources.getString(stringId);
     }

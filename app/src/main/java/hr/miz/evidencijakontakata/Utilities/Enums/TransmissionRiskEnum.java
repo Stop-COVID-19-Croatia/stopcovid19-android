@@ -4,7 +4,7 @@ import hr.miz.evidencijakontakata.CroatiaExposureNotificationApp;
 import hr.miz.evidencijakontakata.R;
 
 public enum TransmissionRiskEnum {
-    LowRisk(50),
+    LowRisk(0),
     MediumRisk(501),
     HighRisk(769);
 

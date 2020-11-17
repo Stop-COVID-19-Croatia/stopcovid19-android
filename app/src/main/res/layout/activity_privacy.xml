@@ -1,54 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/white"
-    android:orientation="vertical"
-    android:paddingBottom="16dp">
+    android:orientation="vertical">
 
-    <RelativeLayout
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize">
-
-        <ImageView
-            android:id="@android:id/home"
-            android:layout_width="36dp"
-            android:layout_height="36dp"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:layout_marginRight="16dp"
-            android:src="@drawable/close_icon" />
-
-    </RelativeLayout>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:gravity="center"
-        android:text="@string/how_app_works"
-        android:textAppearance="@style/RobotoBold"
-        android:textColor="@color/black_text_color"
-        android:textSize="18sp" />
-
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:paddingTop="32dp">
+        android:layout_height="match_parent"
+        android:paddingBottom="16dp"
+        android:paddingTop="48dp"
+        android:clipToPadding="false">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:orientation="vertical"
             android:paddingLeft="24dp"
-            android:paddingRight="24dp"
-            android:orientation="vertical">
+            android:paddingRight="24dp">
 
-            <ImageView
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:paddingTop="32dp"
+                android:gravity="center"
+                android:text="@string/how_app_works"
+                android:textAppearance="@style/RobotoBold"
+                android:textColor="@color/black_text_color"
+                android:textSize="18sp" />
+
+            <com.airbnb.lottie.LottieAnimationView
                 android:layout_width="128dp"
                 android:layout_height="128dp"
                 android:layout_gravity="center_horizontal"
-                android:src="@drawable/icon_step_one" />
+                app:lottie_rawRes="@raw/icon_step_one"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -68,11 +57,13 @@
                 android:textColor="@color/black_text_color"
                 android:textSize="16sp" />
 
-            <ImageView
+            <com.airbnb.lottie.LottieAnimationView
                 android:layout_width="128dp"
                 android:layout_height="128dp"
                 android:layout_gravity="center_horizontal"
-                android:src="@drawable/icon_step_two" />
+                app:lottie_rawRes="@raw/icon_step_two"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -92,11 +83,13 @@
                 android:textColor="@color/black_text_color"
                 android:textSize="16sp" />
 
-            <ImageView
+            <com.airbnb.lottie.LottieAnimationView
                 android:layout_width="128dp"
                 android:layout_height="128dp"
                 android:layout_gravity="center_horizontal"
-                android:src="@drawable/icon_step_three" />
+                app:lottie_rawRes="@raw/icon_step_three"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -116,11 +109,13 @@
                 android:textColor="@color/black_text_color"
                 android:textSize="16sp" />
 
-            <ImageView
+            <com.airbnb.lottie.LottieAnimationView
                 android:layout_width="128dp"
                 android:layout_height="128dp"
                 android:layout_gravity="center_horizontal"
-                android:src="@drawable/icon_step_four" />
+                app:lottie_rawRes="@raw/icon_step_four"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -140,11 +135,13 @@
                 android:textColor="@color/black_text_color"
                 android:textSize="16sp" />
 
-            <ImageView
+            <com.airbnb.lottie.LottieAnimationView
                 android:layout_width="128dp"
                 android:layout_height="128dp"
                 android:layout_gravity="center_horizontal"
-                android:src="@drawable/icon_step_five" />
+                app:lottie_rawRes="@raw/icon_step_five"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -164,12 +161,38 @@
                 android:textColor="@color/black_text_color"
                 android:textSize="16sp" />
 
+            <com.airbnb.lottie.LottieAnimationView
+                android:layout_width="128dp"
+                android:layout_height="128dp"
+                android:layout_gravity="center_horizontal"
+                app:lottie_rawRes="@raw/icon_bluetooth"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="@string/step_six_title"
+                android:textAppearance="@style/RobotoBold"
+                android:textColor="@color/black_text_color"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="@string/step_six_text"
+                android:textAppearance="@style/RobotoRegular"
+                android:textColor="@color/black_text_color"
+                android:textSize="16sp" />
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:text="@string/find_out_more"
-                android:textAppearance="@style/RobotoRegular"
+                android:textAppearance="@style/RobotoBold"
                 android:textColor="@color/black_text_color"
                 android:textSize="16sp" />
 
@@ -238,8 +261,16 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
                     android:layout_weight="0.5"
-                    android:src="@drawable/develop_by_logo" />
+                    android:src="@drawable/develop_by_apisit" />
             </LinearLayout>
         </LinearLayout>
-    </ScrollView>
-</LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <ImageView
+        android:id="@+id/home"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_gravity="right"
+        android:padding="14dp"
+        android:src="@drawable/close_icon" />
+</FrameLayout>

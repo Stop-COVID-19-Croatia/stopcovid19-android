@@ -2,11 +2,9 @@
     <string name="app_name" translatable="false">Stop COVID-19</string>
 
     <string name="global_url" translatable="false">https://en.apis-it.hr/</string>
-    <string name="global_url_test" translatable="false">https://en.apis-it.hr/</string>
     <string name="file_provider_authority" translatable="false">hr.miz.evidencijakontakata.fileprovider</string>
     <string name="ExposureAppPrefFile" translatable="false">ExposureAppPrefFile</string>
     <string name="google_play_link" translatable="false">https://play.google.com/store/apps/details?id=hr.miz.evidencijakontakata</string>
-    <bool name="is_production">true</bool>
 
     <string name="terms_url">https://stopcovid19.zdravlje.hr/html/terms.html</string>
     <string name="privacy_url">https://stopcovid19.zdravlje.hr/html/privacy-policy.html</string>
@@ -49,6 +47,8 @@
     <string name="privacy_message">Application notifications are designed to notify you if you are exposed to another user of the application who subsequently reports his or her positive laboratory findings through the application.\n\nYou can choose to turn off notifications at any time.\n\nExposure notices rely on the sharing and collection of random identifiers. Identifiers are a series of numbers that do not identify you to other users and are changed several times a day to protect your privacy. </string>
     <string name="on">Turned on</string>
     <string name="off">Turned off</string>
+    <string name="exchange_on">On</string>
+    <string name="exchange_off">Off</string>
     <string name="high_risk_tem">High risk</string>
     <string name="low_risk_item">Low risk</string>
     <string name="no_contacts">The application does not record contacts with other devices in the vicinity.</string>
@@ -91,24 +91,26 @@
     <string name="low_risk_long">Check your symptoms regularly during the next two weeks using the application Andrija. Wear a mask when leaving your home and avoid contact with the elderly. If you develop symptoms, stay at home and call your doctor who will give you further instructions. Tell him you have this application installed.</string>
 
     <string name="privacy_info_title">Your privacy is safe</string>
-    <string name="privacy_first">The app does not collect your personal data, like your name, surname, date of birth, address, telephone number etc.</string>
-    <string name="privacy_second">The app cannot identify you or the people you have been in contact with.</string>
+    <string name="privacy_first">The application does not collect your personal data, like your name, surname, date of birth, address, telephone number etc.</string>
+    <string name="privacy_second">The application cannot identify you or the people you have been in contact with.</string>
     <string name="privacy_third">There is no collection of geolocation data (GPS), your movement is not tracked.</string>
     <string name="privacy_fourth">The data saved on your device and the connections to the server are encrypted.</string>
-    <string name="privacy_fifth">Your data are saved on the servers in the Republic of Croatia and are controlled by the Ministry of Health.</string>
+    <string name="privacy_fifth">In case of infection and with your consent, your keys will be temporarily stored on a server in the Republic of Croatia managed by the Ministry of Health. If you consent to exchange of keys with other European countries, your keys will be temporarily stored on their servers.</string>
     <string name="update_message">New version of the application is available. The new version needs to be downloaded in order to use the application.</string>
     <string name="upgrade">Google Play</string>
     <string name="how_app_works">How the app works?</string>
-    <string name="step_one_title">The app assigns a randomly generated keys to each device</string>
+    <string name="step_one_title">The app assigns randomly generated keys to each device</string>
     <string name="step_one_text">These keys are a random string of characters and do not contain information about your device or you. They rotate several times every hour to keep your privacy protected.</string>
     <string name="step_two_title">Devices that come into contact exchange their random keys</string>
     <string name="step_two_text">When you are near another user of the application, mobile phones exchange keys via Bluetooth. This way, the application can track the contacts made without the ability to identify you or the person you were in contact with.</string>
     <string name="step_three_title">Users who test positive can choose if they want to share their random keys</string>
     <string name="step_three_text">Users who have a positive laboratory result can send their random keys broadcasted in the previous period to the server, making them available to other users of the application. Random keys are sent by entering the code generated for users by a healthcare professional after they have received a positive laboratory test on COVID-19.</string>
     <string name="step_four_title">Each device checks if it has had contact with any of the shared keys</string>
-    <string name="step_four_text">The app periodically checks the keys on the server and compares them to the keys saved on your device. This allows the app to determine if you have been exposed to a potential infection risk.</string>
+    <string name="step_four_text">The app periodically checks the keys on the server and compares them to the keys saved on your device. This allows the app to determine if you have been exposed to a potential infection risk. Due to the limitations of some manufacturers of mobile devices, if the application is not started occasionally or it is rarely used for a number of days, it is possible that regular daily exposure check is stopped. The application will continue to exchange keys with other devices, but you may not receive exposure notification in timely manner. To prevent this, open the app once a day. Google and Apple are working with mobile device manufacturers to avoid this limitation.</string>
     <string name="step_five_title">User is notified if there is a positive match</string>
-    <string name="step_five_text">If you have been in contact with a user who tested positive and shared their keys, the app will send you notification and instructions what to do next.  The app does not need or use information where or with whom you came into contact.</string>
+    <string name="step_five_text">If you have been in contact with a user who tested positive and shared their keys, the app will send you notification and instructions what to do next. The app does not need or use information where or with whom you came into contact.</string>
+    <string name="step_six_title">Exchange of random keys with other European countries </string>
+    <string name="step_six_text">By giving consent to exchange, random keys of users of other authorized European COVID-19 mobile applications who have shared information about the infection will be processed on your mobile device so that the mobile application can determine if you have been in close contact. Also, in case of infection, your random keys will be sent to the European keys exchange service and processed by authorized COVID-19 mobile applications of other European countries.</string>
     <string name="find_out_more">Find out more:</string>
     <string name="terms_and_conditions">Terms of Use</string>
     <string name="privcy_policy">Privacy Notice</string>
@@ -127,6 +129,11 @@
     <string name="no_service">An error occurred. Please try again later.</string>
     <string name="invalid_call">Invalid call</string>
     <string name="ble_requrements">Bluetooth and location must be enabled for the Exposure api to function properly</string>
+    <string name="countries_of_interest">Exchange settings</string>
+    <string name="international_exchange">European exchange is</string>
+    <string name="keys_exchange_with_selected_countries">Exchange of random keys with other European countries</string>
+    <string name="keys_exchange_description">By giving consent to exchange, random keys of users of other authorized  COVID-19 mobile applications in Europe who have shared information about the infection will be processed on your mobile device so that the mobile application can determine if you have been in close contact. Also, in case of infection, your random keys will be sent to the European keys exchange service and processed by authorized COVID-19 mobile applications of other European countries.\n\nActivation of this setting will ensure that you receive exposure notification when travelling abroad or interacting with users of other authorized COVID-19 mobile application.</string>
+    <string name="accept">Accept</string>
 
     <string-array name="days_of_week">
         <item>Sunday</item>
@@ -137,6 +144,6 @@
         <item>Friday</item>
         <item>Saturday</item>
     </string-array>
-    <string name="info">Info</string>
-    <string name="turned_on">Turned on</string>
+    <string name="keys_exchange_consent_title">Accept keys exchange with other European countries</string>
+    <string name="keys_exchange_consent_description">By accepting the exchange, random keys of users of other authorized European COVID-19 mobile applications who have shared information about their infection will be processed on your mobile device to determine if you were in close contact. Also, in case of infection, your random keys will be sent to the European keys exchange service and processed by authorized COVID-19 mobile applications of other European countries.</string>
 </resources>

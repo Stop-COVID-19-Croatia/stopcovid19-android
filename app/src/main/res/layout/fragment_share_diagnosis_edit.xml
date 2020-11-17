@@ -36,11 +36,13 @@
             android:orientation="vertical"
             android:paddingHorizontal="@dimen/padding_large">
 
-            <ImageView
+            <com.airbnb.lottie.LottieAnimationView
                 android:layout_width="64dp"
                 android:layout_height="64dp"
                 android:layout_gravity="center"
-                android:src="@drawable/icon_shield" />
+                app:lottie_rawRes="@raw/icon_shield"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true" />
 
             <TextView
                 android:layout_width="match_parent"

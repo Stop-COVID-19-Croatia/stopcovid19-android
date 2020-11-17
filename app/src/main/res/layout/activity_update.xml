@@ -34,8 +34,8 @@
 
         <ImageView
             android:id="@+id/ivCompanyLogo"
-            android:layout_width="128dp"
-            android:layout_height="80dp"
+            android:layout_width="70dp"
+            android:layout_height="35dp"
             android:layout_margin="16dp"
             android:layout_alignParentBottom="true"
             android:layout_alignParentRight="true"

@@ -3,6 +3,7 @@ package hr.miz.evidencijakontakata.Utilities.ExposureNotifications;
 import android.content.Context;
 
 import androidx.annotation.NonNull;
+import androidx.work.BackoffPolicy;
 import androidx.work.Constraints;
 import androidx.work.ExistingPeriodicWorkPolicy;
 import androidx.work.NetworkType;
@@ -23,16 +24,26 @@ public class DownloadWorker extends Worker {
     private static boolean didCheck = false;
 
     static void schedule() {
+        schedule(ExistingPeriodicWorkPolicy.KEEP);
+        check();
+    }
+
+    static void reSchedule() {
+        schedule(ExistingPeriodicWorkPolicy.REPLACE);
+        forceCheck();
+    }
+
+    private static void schedule(ExistingPeriodicWorkPolicy policy) {
         Constraints workConstraints = new Constraints.Builder()
                 .setRequiredNetworkType(NetworkType.CONNECTED)
                 .build();
         int initialDelay = (int) (Math.random() * WORKER_INTERVAL_DELAY * 60);
         PeriodicWorkRequest downloadWork = new PeriodicWorkRequest.Builder(DownloadWorker.class, WORKER_INTERVAL_DELAY, TimeUnit.HOURS)
                 .setConstraints(workConstraints)
+                .setBackoffCriteria(BackoffPolicy.LINEAR,20,TimeUnit.MINUTES)
                 .setInitialDelay(initialDelay, TimeUnit.MINUTES)
                 .build();
-        WorkManager.getInstance(CroatiaExposureNotificationApp.getInstance()).enqueueUniquePeriodicWork(DownloadWorker.class.getName(), ExistingPeriodicWorkPolicy.KEEP , downloadWork);
-        forceCheck();
+        WorkManager.getInstance(CroatiaExposureNotificationApp.getInstance()).enqueueUniquePeriodicWork(DownloadWorker.class.getName(), policy, downloadWork);
     }
 
     static void cancel() {
@@ -51,10 +62,14 @@ public class DownloadWorker extends Worker {
         return Result.success();
     }
 
-    private static void forceCheck() {
+    private static void check() {
         if (!didCheck) {
             didCheck = true;
-            ExposureProvider.initCheck();
+            forceCheck();
         }
+    }
+
+    private static void forceCheck() {
+        ExposureProvider.initCheck();
     }
 }

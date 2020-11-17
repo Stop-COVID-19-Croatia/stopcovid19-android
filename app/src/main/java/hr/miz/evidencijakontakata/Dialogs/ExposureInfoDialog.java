@@ -54,21 +54,24 @@ public class ExposureInfoDialog extends Dialog {
     }
 
     private void setupHighRisk() {
-        binding.ivWarning.setImageDrawable(ContextCompat.getDrawable(getContext(), R.drawable.icon_highrisi));
+        binding.ivWarning.setAnimation(R.raw.icon_highrisi);
+        binding.ivWarning.playAnimation();
         binding.tvHighRisk.setVisibility(View.VISIBLE);
         binding.tvRecommendation.setBackground(ContextCompat.getDrawable(getContext(), R.drawable.button_grey));
         binding.tvRecommendation.setText(getContext().getString(R.string.high_risk_long));
     }
 
     private void setupMediumRisk() {
-        binding.ivWarning.setImageDrawable(ContextCompat.getDrawable(getContext(), R.drawable.icon_risk));
+        binding.ivWarning.setAnimation(R.raw.icon_risk);
+        binding.ivWarning.playAnimation();
         binding.tvHighRisk.setVisibility(View.GONE);
         binding.tvRecommendation.setBackground(ContextCompat.getDrawable(getContext(), R.drawable.button_grey_outline));
         binding.tvRecommendation.setText(getContext().getString(R.string.medium_risk_long));
     }
 
     private void setupLowRisk() {
-        binding.ivWarning.setImageDrawable(ContextCompat.getDrawable(getContext(), R.drawable.icon_risk));
+        binding.ivWarning.setAnimation(R.raw.icon_risk);
+        binding.ivWarning.playAnimation();
         binding.tvHighRisk.setVisibility(View.GONE);
         binding.tvRecommendation.setBackground(ContextCompat.getDrawable(getContext(), R.drawable.button_grey_outline));
         binding.tvRecommendation.setText(getContext().getString(R.string.low_risk_long));

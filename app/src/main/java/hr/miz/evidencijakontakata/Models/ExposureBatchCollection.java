@@ -12,10 +12,8 @@ public class ExposureBatchCollection {
     private ArrayList<String> checkedBatches = new ArrayList<>();
     private ArrayList<ExposureBatch> batches = new ArrayList<>();
 
-    public ExposureBatchCollection(ArrayList<String> urls, boolean downloadAll) {
-        if(!downloadAll) {
-            loadCheckedBatches();
-        }
+    public ExposureBatchCollection(ArrayList<String> urls) {
+        loadCheckedBatches();
 
         for (String url : urls) {
             if(!checkedBatches.contains(ExposureBatch.idFromUrl(url))) {

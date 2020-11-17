@@ -12,7 +12,6 @@ import android.widget.DatePicker;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.nearby.exposurenotification.TemporaryExposureKey;
@@ -33,7 +32,7 @@ import hr.miz.evidencijakontakata.Utilities.ExposureNotifications.ExposureNotifi
 import hr.miz.evidencijakontakata.Utilities.Util;
 import hr.miz.evidencijakontakata.databinding.FragmentShareDiagnosisEditBinding;
 
-public class ShareDiagnosisActivity extends AppCompatActivity implements DatePickerDialog.OnDateSetListener, IExposureListener {
+public class ShareDiagnosisActivity extends BaseActivity implements DatePickerDialog.OnDateSetListener, IExposureListener {
     private static final int CODE_LENGTH = 8;
     private FragmentShareDiagnosisEditBinding binding;
 
