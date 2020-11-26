@@ -128,11 +128,11 @@ public class ExposuresFragment extends Fragment implements MainActivity.IExposur
         View.OnClickListener onLanguageClicked;
         if (LanguageUtil.getLanguage().equalsIgnoreCase(getString(R.string.croatian_language_short))) {
             binding.ivLocale.setImageResource(R.drawable.icon_hr);
-            binding.tvLocale.setText(getString(R.string.croatian_language_short));
+            binding.tvLocale.setText(getString(R.string.english_language_short));
             onLanguageClicked = v -> setLanguage(getString(R.string.english_language_short));
         } else {
             binding.ivLocale.setImageResource(R.drawable.icon_en);
-            binding.tvLocale.setText(getString(R.string.english_language_short));
+            binding.tvLocale.setText(getString(R.string.croatian_language_short));
             onLanguageClicked = v -> setLanguage(getString(R.string.croatian_language_short));
         }
         binding.llLocale.setOnClickListener(onLanguageClicked);
