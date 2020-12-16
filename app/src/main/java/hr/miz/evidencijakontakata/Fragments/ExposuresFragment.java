@@ -84,7 +84,7 @@ public class ExposuresFragment extends Fragment implements MainActivity.IExposur
     }
 
     private void setupRiskLevel() {
-        ExposureSummaryCollection.getInstance().loadCollection(() -> {
+        ExposureSummaryCollection.getInstance().loadSummaries(() -> {
             ExposureSummaryModel exposureSummary = ExposureSummaryCollection.getInstance().getRiskiestSummaryModel();
             if (exposureSummary != null && exposureSummary.matchedKeyCount > 0 && exposureSummary.isRisky()) {
                 binding.llWarning.setVisibility(View.VISIBLE);
@@ -98,6 +98,7 @@ public class ExposuresFragment extends Fragment implements MainActivity.IExposur
                 }
                 binding.llWarning.setOnClickListener(v -> ExposureInfoDialog.start(context, exposureSummary));
             } else {
+                binding.llWarning.setVisibility(View.GONE);
                 binding.tvMessage.setVisibility(View.VISIBLE);
             }
         });

@@ -21,6 +21,8 @@ import com.google.android.gms.nearby.exposurenotification.ExposureConfiguration;
 
 public class ExposureConfigurations {
 
+    public static final long EXPOSURE_VALIDITY_LIFETIME = 15 * 24 * 60 * 60 * 1000;
+
     public static ExposureConfiguration get() {
         return new ExposureConfiguration.ExposureConfigurationBuilder()
                 .setDurationAtAttenuationThresholds(50, 70)

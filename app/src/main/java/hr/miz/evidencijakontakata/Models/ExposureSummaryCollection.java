@@ -1,5 +1,7 @@
 package hr.miz.evidencijakontakata.Models;
 
+import com.google.android.gms.nearby.exposurenotification.ExposureSummary;
+
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
@@ -8,6 +10,7 @@ import hr.miz.evidencijakontakata.Utilities.ExposureNotifications.ExposureNotifi
 import hr.miz.evidencijakontakata.Utilities.StorageUtils;
 
 public class ExposureSummaryCollection {
+
     private static final String keySummaryCollection = "SummaryCollection";
     private static ExposureSummaryCollection instance;
     private ArrayList<String> exposureTokens = new ArrayList<>();
@@ -15,35 +18,22 @@ public class ExposureSummaryCollection {
 
     public static ExposureSummaryCollection getInstance() {
         if(instance == null) {
+            instance = StorageUtils.getObject(keySummaryCollection, ExposureSummaryCollection.class);
+        }
+
+        if(instance == null) {
             instance = new ExposureSummaryCollection();
         }
 
         return instance;
     }
 
-    void addNewSummary(String token, ExposureSummaryModel summary) {
-        ExposureSummaryCollection tmp = ((ExposureSummaryCollection) StorageUtils.getObject(keySummaryCollection, ExposureSummaryCollection.class));
-        if (tmp != null && tmp.exposureTokens != null) {
-            exposureTokens = tmp.exposureTokens;
-        }
-
-        if (!exposureTokens.contains(token)) {
-            exposureTokens.add(token);
-            summaries.add(summary);
-            StorageUtils.saveObject(keySummaryCollection, this);
-        }
-    }
-
-    private void removeToken(String token) {
-        exposureTokens.remove(token);
-        StorageUtils.saveObject(keySummaryCollection, this);
-    }
-
-    public void loadCollection(ISummaryLoaderListener iSummaryLoaderListener) {
-        ExposureSummaryCollection summaryCollection = (ExposureSummaryCollection) StorageUtils.getObject(keySummaryCollection, ExposureSummaryCollection.class);
-        if (summaryCollection != null && summaryCollection.exposureTokens != null) {
-            loadTokenQueue(new LinkedList<>(summaryCollection.exposureTokens), iSummaryLoaderListener);
-        } else if(iSummaryLoaderListener != null){
+    public void loadSummaries(ISummaryLoaderListener iSummaryLoaderListener) {
+        removeOldSummaries();
+        if (exposureTokens != null && !exposureTokens.isEmpty()) {
+            loadTokenQueue(new LinkedList<>(exposureTokens), iSummaryLoaderListener);
+        } else if (iSummaryLoaderListener != null) {
+            runListCleaner();
             iSummaryLoaderListener.onSummariesLoaded();
         }
     }
@@ -52,11 +42,60 @@ public class ExposureSummaryCollection {
         String token = tokens.poll();
         if(token != null) {
             ExposureNotificationWrapper.get().getExposureSummary(token)
-                    .addOnSuccessListener(exposureSummary -> summaries.add(new ExposureSummaryModel(exposureSummary)))
-                    .addOnFailureListener(e -> removeToken(token))
+                    .addOnSuccessListener(exposureSummary -> {
+                        addExposureSummary(exposureSummary, token);
+                        exposureTokens.remove(token);
+                    })
                     .addOnCompleteListener(task -> loadTokenQueue(tokens, iSummaryLoaderListener));
         } else if(iSummaryLoaderListener != null){
+            runListCleaner();
             iSummaryLoaderListener.onSummariesLoaded();
+        }
+    }
+
+    public void runListCleaner() {
+        for (int i = summaries.size()-1; i >= 0; i--) {
+            if(!summaries.get(i).isValid()) {
+                summaries.remove(i);
+            }
+        }
+        StorageUtils.saveObject(keySummaryCollection, this);
+    }
+
+    private void removeOldSummaries() {
+        for (int i = summaries.size()-1; i >= 0; i--) {
+            if(summaries.get(i).token == null || summaries.get(i).token.isEmpty()) {
+                summaries.remove(i);
+            }
+        }
+    }
+
+    public void addExposureSummary(ExposureSummary exposureSummary, String token) {
+        if(exposureSummary.getDaysSinceLastExposure() <= 14) {
+            addSummary(new ExposureSummaryModel(exposureSummary, token));
+        } else {
+            removeSummary(token);
+        }
+    }
+
+    void addSummary(ExposureSummaryModel summary) {
+        if(summaries == null) {
+            summaries = new ArrayList<>();
+        }
+
+        if (!summaries.contains(summary)) {
+            summaries.add(summary);
+            StorageUtils.saveObject(keySummaryCollection, this);
+        }
+    }
+
+    private void removeSummary(String token) {
+        for (ExposureSummaryModel exposureSummary : summaries) {
+            if(exposureSummary.equals(token)) {
+                summaries.remove(exposureSummary);
+                StorageUtils.saveObject(keySummaryCollection, this);
+                break;
+            }
         }
     }
 
