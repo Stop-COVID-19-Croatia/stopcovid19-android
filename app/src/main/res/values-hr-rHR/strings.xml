@@ -81,8 +81,8 @@
     <string name="low_risk_short">Bili ste u kontaktu sa zaraženom osobom.</string>
     ​
     <string name="high_risk_long">Ostanite kod kuće i nazovite svog liječnika koji će Vam dati daljnje upute. Recite mu da koristite ovu aplikaciju.</string>
-    <string name="medium_risk_long">Pratite svoje simptome naredna dva tjedna putem aplikacije Andrija. Nosite masku prilikom  izlaska iz kuće i izbjegavajte kontakte sa starijim osobama. Ukoliko razvijete simptome, ostanite kod kuće i nazovite svog liječnika koji će Vam dati daljnje upute. Recite mu da koristite ovu aplikaciju.</string>
-    <string name="low_risk_long">Pratite svoje simptome naredna dva tjedna putem aplikacije Andrija. Nosite masku prilikom  izlaska iz kuće i izbjegavajte kontakte sa starijim osobama. Ukoliko razvijete simptome, ostanite kod kuće i nazovite svog liječnika koji će Vam dati daljnje upute. Recite mu da koristite ovu aplikaciju.</string>
+    <string name="medium_risk_long">Pratite svoje simptome naredna dva tjedna. Nosite masku prilikom  izlaska iz kuće i izbjegavajte kontakte sa starijim osobama. Ukoliko razvijete simptome, ostanite kod kuće i nazovite svog liječnika koji će Vam dati daljnje upute. Recite mu da koristite ovu aplikaciju.</string>
+    <string name="low_risk_long">Pratite svoje simptome naredna dva tjedna. Nosite masku prilikom  izlaska iz kuće i izbjegavajte kontakte sa starijim osobama. Ukoliko razvijete simptome, ostanite kod kuće i nazovite svog liječnika koji će Vam dati daljnje upute. Recite mu da koristite ovu aplikaciju.</string>
     ​
     <string name="privacy_info_title">Vaša privatnost je zaštićena</string>
     <string name="privacy_first">Aplikacija ne prikuplja Vaše osobne podatke poput imena, prezimena, datuma rođenja, adrese, broja mobitela itd.</string>

@@ -1,16 +1,16 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 29
+    compileSdkVersion 30
     buildToolsVersion "29.0.3"
     viewBinding.enabled = true
 
     defaultConfig {
         applicationId "hr.miz.evidencijakontakata"
         minSdkVersion 23
-        targetSdkVersion 29
-        versionCode 11
-        versionName '2.2.0'
+        targetSdkVersion 30
+        versionCode 12
+        versionName '2.2.1'
         multiDexEnabled true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -25,6 +25,16 @@ android {
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    bundle {
+        language {
+            // Specifies that the app bundle should not support
+            // configuration APKs for language resources. These
+            // resources are instead packaged with each base and
+            // dynamic feature APK.
+            enableSplit = false
+        }
     }
 }
 

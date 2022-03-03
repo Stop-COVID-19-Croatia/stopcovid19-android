@@ -87,8 +87,8 @@
     <string name="low_risk_short">You were in contact with an infected person. </string>
 
     <string name="high_risk_long">Stay at home and call your doctor, he will give you further instructions. Tell him that you have this application installed.</string>
-    <string name="medium_risk_long">Check your symptoms regularly during the next two weeks using the application Andrija. Wear a mask when leaving your home and avoid contact with the elderly. If you develop symptoms, stay at home and call your doctor who will give you further instructions. Tell him you have this application installed.</string>
-    <string name="low_risk_long">Check your symptoms regularly during the next two weeks using the application Andrija. Wear a mask when leaving your home and avoid contact with the elderly. If you develop symptoms, stay at home and call your doctor who will give you further instructions. Tell him you have this application installed.</string>
+    <string name="medium_risk_long">Check your symptoms regularly during the next two weeks. Wear a mask when leaving your home and avoid contact with the elderly. If you develop symptoms, stay at home and call your doctor who will give you further instructions. Tell him you have this application installed.</string>
+    <string name="low_risk_long">Check your symptoms regularly during the next two weeks. Wear a mask when leaving your home and avoid contact with the elderly. If you develop symptoms, stay at home and call your doctor who will give you further instructions. Tell him you have this application installed.</string>
 
     <string name="privacy_info_title">Your privacy is safe</string>
     <string name="privacy_first">The application does not collect your personal data, like your name, surname, date of birth, address, telephone number etc.</string>
